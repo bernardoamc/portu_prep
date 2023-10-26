@@ -1,0 +1,8 @@
+<.header>
+  Edit Question <%= @question.id %>
+  <:subtitle>Use this form to manage question records in your database.</:subtitle>
+</.header>
+
+<.question_form changeset={@changeset} action={~p"/questions/#{@question}"} topic_options={@topic_options} />
+
+<.back navigate={~p"/questions"}>Back to questions</.back>
