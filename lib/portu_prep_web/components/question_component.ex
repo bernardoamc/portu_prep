@@ -8,8 +8,8 @@ defmodule PortuPrepWeb.QuestionComponent do
     ~H"""
     <div id={@id} class={[
       "mt-2 rounded",
-       @submission.action && @submission.errors == [] && "border border-teal-300 focus:border-teal-400",
-       @submission.action && @submission.errors != [] && "border border-rose-400 focus:border-rose-400",
+       @submission.action && @submission.errors == [] && "border border-teal-300 focus:border-teal-400 bg-teal-200",
+       @submission.action && @submission.errors != [] && "border border-rose-400 focus:border-rose-400 bg-rose-200",
     ]}>
       <.simple_form
         :let={f}

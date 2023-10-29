@@ -7,6 +7,8 @@ defmodule PortuPrep.Application do
 
   @impl true
   def start(_type, _args) do
+    PortuPrep.Release.migrate()
+
     children = [
       PortuPrepWeb.Telemetry,
       PortuPrep.Repo,

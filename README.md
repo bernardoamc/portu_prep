@@ -31,3 +31,24 @@ only used to keep track of the user's answer in memory. A submission is not pers
   * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+### Deploy Resources
+
+- [Fly.io](https://fly.io)
+   - [Configure sqlite3](https://fly.io/docs/elixir/advanced-guides/sqlite3/)
+   - [Deploy with fly.io](https://hexdocs.pm/phoenix/fly.html)
+   - [Set custom domain](https://fly.io/docs/apps/custom-domain/)
+
+**Setting the canonical host**
+
+- `flyctl secrets set CANONICAL_HOST=portuprep.com`
+
+**Troubleshooting**
+
+- `flyctl logs --app portuprep`
+- `flyctl ssh console`
+    - `bin/portuprep remote`
+
+**Seeding**
+
+- `GlobalSetup.run("../datasets")`

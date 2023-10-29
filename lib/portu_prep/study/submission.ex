@@ -21,7 +21,7 @@ defmodule PortuPrep.Study.Submission do
 
   def validate_submission(changeset, field) when is_atom(field) do
     validate_change(changeset, field, fn field, value ->
-      case value == changeset.changes.answer do
+      case String.downcase(value) == String.downcase(changeset.changes.answer) do
         true ->
           []
 

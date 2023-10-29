@@ -52,7 +52,8 @@ defmodule PortuPrep.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
       {:csv, "~> 3.2"},
-      {:slugy, "~> 4.1.1"}
+      {:slugy, "~> 4.1.1"},
+      {:plug_canonical_host, "~> 2.0"}
     ]
   end
 
