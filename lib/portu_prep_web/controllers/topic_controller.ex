@@ -28,8 +28,7 @@ defmodule PortuPrepWeb.TopicController do
 
   def show(conn, %{"id" => id}) do
     topic = Topics.get_topic!(id)
-    questions = Topics.list_questions_by_topic(topic)
-    render(conn, :show, topic: topic, questions: questions)
+    render(conn, :show, topic: topic)
   end
 
   def edit(conn, %{"id" => id}) do

@@ -10,6 +10,9 @@
 <.table id="topics" rows={@topics} row_click={&JS.navigate(~p"/topics/#{&1}")}>
   <:col :let={topic} label="Name"><%= topic.name %></:col>
   <:col :let={topic} label="Description"><%= topic.description %></:col>
+    <:action :let={topic}>
+    <.link navigate={~p"/study/#{topic}"}>Study</.link>
+  </:action>
   <:action :let={topic}>
     <div class="sr-only">
       <.link navigate={~p"/topics/#{topic}"}>Show</.link>

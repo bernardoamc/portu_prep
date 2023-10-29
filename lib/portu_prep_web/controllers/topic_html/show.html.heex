@@ -1,17 +1,15 @@
-<.back navigate={~p"/topics"}>Back to topics</.back>
+<.header>
+  Listing Topics
+  <:actions>
+    <.link href={~p"/study/#{@topic}"}>
+      <.button>Study</.button>
+    </.link>
+  </:actions>
+</.header>
 
 <.list>
   <:item title="Name"><%= @topic.name %></:item>
   <:item title="Description"><%= @topic.description %></:item>
 </.list>
 
-<div class="mt-10 border-t-2 border-blue-900">
-  <%= for question <- @questions do %>
-    <.simple_form :let={f} for={question} action={~p"/questions/#{question}"}>
-      <.input field={f[:problem]} type="text" label="Name" />
-      <:actions>
-        <.button>Submit</.button>
-      </:actions>
-    </.simple_form>
-  <% end %>
-</div>
+<.back navigate={~p"/topics"}>Back to topics</.back>
