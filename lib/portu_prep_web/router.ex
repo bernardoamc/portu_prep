@@ -21,7 +21,7 @@ defmodule PortuPrepWeb.Router do
     resources "/topics", TopicController
     resources "/questions", QuestionController
 
-    get "/", PageController, :home
+    get "/", TopicController, :index
   end
 
   # Other scopes may use custom stacks.
