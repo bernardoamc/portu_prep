@@ -51,7 +51,8 @@ defmodule PortuPrep.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
-      {:csv, "~> 3.2"}
+      {:csv, "~> 3.2"},
+      {:slugy, "~> 4.1.1"}
     ]
   end
 

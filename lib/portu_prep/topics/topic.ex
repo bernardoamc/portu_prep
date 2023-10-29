@@ -1,10 +1,12 @@
 defmodule PortuPrep.Topics.Topic do
   use Ecto.Schema
   import Ecto.Changeset
+  import Slugy
 
   schema "topics" do
     field :name, :string
     field :description, :string
+    field :slug, :string
 
     has_many :questions, PortuPrep.Questions.Question
 
@@ -14,7 +16,9 @@ defmodule PortuPrep.Topics.Topic do
   @doc false
   def changeset(topic, attrs) do
     topic
-    |> cast(attrs, [:name, :description])
+    |> cast(attrs, [:name, :description, :slug])
     |> validate_required([:name, :description])
+    |> slugify(:name)
+    |> unique_constraint(:slug)
   end
 end
