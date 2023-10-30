@@ -15,7 +15,47 @@ defmodule GlobalSetup do
       "verb_ser.csv" => %{
         name: "Ser - Presente",
         description: "Questions related to the verb \"ser\", which is the verb \"to be\" for permanent situations."
-      }
+      },
+      "verb_fazer.csv" => %{
+        name: "Fazer - Presente",
+        description: "Questions related to the verb \"fazer\", which is the verb \"to do\"."
+      },
+      "verb_saber.csv" => %{
+        name: "Saber - Presente",
+        description: "Questions related to the verb \"saber\", which is the verb \"to know\"."
+      },
+      "verb_ir.csv" => %{
+        name: "Ir - Presente",
+        description: "Questions related to the verb \"ir\", which is the verb \"to go\"."
+      },
+      "verb_vir.csv" => %{
+        name: "Vir - Presente",
+        description: "Questions related to the verb \"vir\", which is the verb \"to come\"."
+      },
+      "verb_ver.csv" => %{
+        name: "Ver - Presente",
+        description: "Questions related to the verb \"ver\", which is the verb \"to see\"."
+      },
+      "verb_ter.csv" => %{
+        name: "Ter - Presente",
+        description: "Questions related to the verb \"ter\", which is the verb \"to have\"."
+      },
+      "verb_querer.csv" => %{
+        name: "Querer - Presente",
+        description: "Questions related to the verb \"querer\", which is the verb \"to want\"."
+      },
+      "verb_por.csv" => %{
+        name: "Por - Presente",
+        description: "Questions related to the verb \"por\", which is the verb \"to put\"."
+      },
+      "verb_trazer.csv" => %{
+        name: "Trazer - Presente",
+        description: "Questions related to the verb \"trazer\", which is the verb \"to bring\"."
+      },
+      "verb_poder.csv" => %{
+        name: "Poder - Presente",
+        description: "Questions related to the verb \"poder\", which is \"to be able to\"."
+      },
     }
 
     Enum.each(topics, fn {filename, %{name: name} = topic_attrs} ->
