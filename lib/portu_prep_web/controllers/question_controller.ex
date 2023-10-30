@@ -2,7 +2,7 @@ defmodule PortuPrepWeb.QuestionController do
   use PortuPrepWeb, :controller
 
   alias PortuPrep.Questions
-  alias PortuPrep.Questions.Question
+  alias PortuPrep.Material.Question
   alias PortuPrep.Topics
 
   def index(conn, _params) do

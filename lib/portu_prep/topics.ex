@@ -6,7 +6,7 @@ defmodule PortuPrep.Topics do
   import Ecto.Query, warn: false
   alias PortuPrep.Repo
 
-  alias PortuPrep.Topics.Topic
+  alias PortuPrep.Material.Topic
 
   @doc """
   Returns the list of topics.

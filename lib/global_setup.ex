@@ -1,7 +1,7 @@
 defmodule GlobalSetup do
   alias PortuPrep.Repo
-  alias PortuPrep.Questions.Question
-  alias PortuPrep.Topics.Topic
+  alias PortuPrep.Material.Question
+  alias PortuPrep.Material.Topic
 
   require Logger
   require CSV

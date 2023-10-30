@@ -4,7 +4,7 @@ defmodule PortuPrep.QuestionsTest do
   alias PortuPrep.Questions
 
   describe "questions" do
-    alias PortuPrep.Questions.Question
+    alias PortuPrep.Material.Question
 
     import PortuPrep.QuestionsFixtures
 

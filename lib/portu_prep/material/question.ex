@@ -1,4 +1,4 @@
-defmodule PortuPrep.Questions.Question do
+defmodule PortuPrep.Material.Question do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -6,7 +6,7 @@ defmodule PortuPrep.Questions.Question do
     field :problem, :string
     field :answer, :string
 
-    belongs_to :topic, PortuPrep.Topics.Topic
+    belongs_to :topic, PortuPrep.Material.Topic
 
     timestamps(type: :utc_datetime)
   end

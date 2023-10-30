@@ -4,7 +4,7 @@ defmodule PortuPrep.TopicsTest do
   alias PortuPrep.Topics
 
   describe "topics" do
-    alias PortuPrep.Topics.Topic
+    alias PortuPrep.Material.Topic
 
     import PortuPrep.TopicsFixtures
 

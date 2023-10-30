@@ -2,7 +2,7 @@ defmodule PortuPrepWeb.TopicController do
   use PortuPrepWeb, :controller
 
   alias PortuPrep.Topics
-  alias PortuPrep.Topics.Topic
+  alias PortuPrep.Material.Topic
 
   def index(conn, _params) do
     topics = Topics.list_topics()

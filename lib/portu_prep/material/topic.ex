@@ -1,4 +1,4 @@
-defmodule PortuPrep.Topics.Topic do
+defmodule PortuPrep.Material.Topic do
   use Ecto.Schema
   import Ecto.Changeset
   import Slugy
@@ -8,7 +8,7 @@ defmodule PortuPrep.Topics.Topic do
     field :description, :string
     field :slug, :string
 
-    has_many :questions, PortuPrep.Questions.Question
+    has_many :questions, PortuPrep.Material.Question
 
     timestamps(type: :utc_datetime)
   end
