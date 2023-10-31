@@ -1,7 +1,7 @@
 defmodule PortuPrepWeb.StudyLive do
   use PortuPrepWeb, :live_view
 
-  alias PortuPrep.Topics
+  alias PortuPrep.Material
   alias PortuPrep.Study
 
   alias PortuPrepWeb.QuestionComponent
@@ -30,10 +30,10 @@ defmodule PortuPrepWeb.StudyLive do
   end
 
   def mount(%{"id" => topic_id}, _session, socket) do
-    topic = Topics.get_topic!(topic_id)
+    topic = Material.get_topic!(topic_id)
     submissions =
-      Topics.list_questions_by_topic(topic)
-      |> Study.change_questions_into_submissions()
+      Material.list_questions_by_topic(topic)
+      |> Study.prepare_questions()
 
     {:ok, assign(socket, topic: topic, submissions: submissions)}
   end

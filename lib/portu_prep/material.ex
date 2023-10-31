@@ -1,12 +1,9 @@
-defmodule PortuPrep.Topics do
-  @moduledoc """
-  The Topics context.
-  """
-
+defmodule PortuPrep.Material do
   import Ecto.Query, warn: false
   alias PortuPrep.Repo
 
   alias PortuPrep.Material.Topic
+  alias PortuPrep.Material.Question
 
   @doc """
   Returns the list of topics.
@@ -26,7 +23,6 @@ defmodule PortuPrep.Topics do
   def list_topics_by_name do
     Repo.all(from t in Topic, order_by: [asc: t.name], select: {t.name, t.id})
   end
-
 
   @doc """
   Returns the list of questions from a topic.
@@ -96,22 +92,6 @@ defmodule PortuPrep.Topics do
   end
 
   @doc """
-  Deletes a topic.
-
-  ## Examples
-
-      iex> delete_topic(topic)
-      {:ok, %Topic{}}
-
-      iex> delete_topic(topic)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_topic(%Topic{} = topic) do
-    Repo.delete(topic)
-  end
-
-  @doc """
   Returns an `%Ecto.Changeset{}` for tracking topic changes.
 
   ## Examples
@@ -122,5 +102,23 @@ defmodule PortuPrep.Topics do
   """
   def change_topic(%Topic{} = topic, attrs \\ %{}) do
     Topic.changeset(topic, attrs)
+  end
+
+  @doc """
+  Creates a question.
+
+  ## Examples
+
+      iex> create_question(%{field: value})
+      {:ok, %Question{}}
+
+      iex> create_question(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_question(attrs \\ %{}) do
+    %Question{}
+    |> Question.changeset(attrs)
+    |> Repo.insert()
   end
 end

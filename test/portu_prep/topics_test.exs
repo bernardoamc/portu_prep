@@ -1,12 +1,12 @@
-defmodule PortuPrep.TopicsTest do
+defmodule PortuPrep.MaterialTest do
   use PortuPrep.DataCase
 
-  alias PortuPrep.Topics
+  alias PortuPrep.Material
 
   describe "topics" do
     alias PortuPrep.Material.Topic
 
-    import PortuPrep.TopicsFixtures
+    import PortuPrep.MaterialFixtures
 
     @invalid_attrs %{name: nil, description: nil}
 

@@ -1,7 +1,7 @@
 defmodule PortuPrepWeb.TopicControllerTest do
   use PortuPrepWeb.ConnCase
 
-  import PortuPrep.TopicsFixtures
+  import PortuPrep.MaterialFixtures
 
   @create_attrs %{name: "some name", description: "some description"}
   @update_attrs %{name: "some updated name", description: "some updated description"}

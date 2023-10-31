@@ -1,7 +1,7 @@
-defmodule PortuPrep.TopicsFixtures do
+defmodule PortuPrep.MaterialFixtures do
   @moduledoc """
   This module defines test helpers for creating
-  entities via the `PortuPrep.Topics` context.
+  entities via the `PortuPrep.Material` context.
   """
 
   @doc """
@@ -14,7 +14,7 @@ defmodule PortuPrep.TopicsFixtures do
         description: "some description",
         name: "some name"
       })
-      |> PortuPrep.Topics.create_topic()
+      |> PortuPrep.Material.create_topic()
 
     topic
   end

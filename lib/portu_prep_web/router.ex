@@ -18,8 +18,7 @@ defmodule PortuPrepWeb.Router do
     pipe_through :browser
 
     live "/study/:id", StudyLive
-    resources "/topics", TopicController
-    resources "/questions", QuestionController
+    resources "/topics", TopicController, except: [:delete]
 
     get "/", TopicController, :index
   end

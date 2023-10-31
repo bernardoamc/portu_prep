@@ -5,7 +5,7 @@ defmodule PortuPrep.Study do
     Submission.changeset(submission, attrs)
   end
 
-  def change_questions_into_submissions(questions) do
+  def prepare_questions(questions) do
     questions
     |> Enum.reduce(%{}, fn question, acc ->
       question_id = "question-#{question.id}"

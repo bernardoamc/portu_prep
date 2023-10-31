@@ -1,7 +1,7 @@
 defmodule PortuPrepWeb.QuestionControllerTest do
   use PortuPrepWeb.ConnCase
 
-  import PortuPrep.QuestionsFixtures
+  import PortuPrep.MaterialFixtures
 
   @create_attrs %{topic_id: 42, problem: "some problem", answer: "some answer"}
   @update_attrs %{topic_id: 43, problem: "some updated problem", answer: "some updated answer"}

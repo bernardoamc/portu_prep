@@ -19,9 +19,4 @@
     </div>
     <.link navigate={~p"/topics/#{topic}/edit"}>Edit</.link>
   </:action>
-  <:action :let={topic}>
-    <.link href={~p"/topics/#{topic}"} method="delete" data-confirm="Are you sure?">
-      Delete
-    </.link>
-  </:action>
 </.table>
