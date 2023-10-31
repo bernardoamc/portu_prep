@@ -8,6 +8,7 @@ defmodule PortuPrep.Material.Topic do
     field :description, :string
     field :slug, :string
 
+    belongs_to :category, PortuPrep.Material.Category
     has_many :questions, PortuPrep.Material.Question
 
     timestamps(type: :utc_datetime)
@@ -16,9 +17,9 @@ defmodule PortuPrep.Material.Topic do
   @doc false
   def changeset(topic, attrs) do
     topic
-    |> cast(attrs, [:name, :description, :slug])
-    |> validate_required([:name, :description])
+    |> cast(attrs, [:category_id, :name, :description, :slug])
+    |> validate_required([:category_id, :name, :description])
     |> slugify(:name)
-    |> unique_constraint(:slug)
+    |> unique_constraint([:category_id, :slug])
   end
 end
