@@ -13,53 +13,119 @@ defmodule GlobalSetup do
         name: "Verbs - Present Tense",
         description: "Questions related to the present tense conjugation of common verbs.",
         topics: %{
-          "verb_estar.csv" => %{
-            name: "Estar - Presente",
+          "present/verb_estar.csv" => %{
+            name: "Estar - Present",
             description: "Questions related to the verb \"estar\", which is the verb \"to be\" for temporary situations."
           },
-          "verb_ser.csv" => %{
-            name: "Ser - Presente",
+          "present/verb_ser.csv" => %{
+            name: "Ser - Present",
             description: "Questions related to the verb \"ser\", which is the verb \"to be\" for permanent situations."
           },
-          "verb_fazer.csv" => %{
-            name: "Fazer - Presente",
+          "present/verb_fazer.csv" => %{
+            name: "Fazer - Present",
             description: "Questions related to the verb \"fazer\", which is the verb \"to do\"."
           },
-          "verb_saber.csv" => %{
-            name: "Saber - Presente",
+          "present/verb_saber.csv" => %{
+            name: "Saber - Present",
             description: "Questions related to the verb \"saber\", which is the verb \"to know\"."
           },
-          "verb_ir.csv" => %{
-            name: "Ir - Presente",
+          "present/verb_ir.csv" => %{
+            name: "Ir - Present",
             description: "Questions related to the verb \"ir\", which is the verb \"to go\"."
           },
-          "verb_vir.csv" => %{
-            name: "Vir - Presente",
+          "present/verb_vir.csv" => %{
+            name: "Vir - Present",
             description: "Questions related to the verb \"vir\", which is the verb \"to come\"."
           },
-          "verb_ver.csv" => %{
-            name: "Ver - Presente",
+          "present/verb_ver.csv" => %{
+            name: "Ver - Present",
             description: "Questions related to the verb \"ver\", which is the verb \"to see\"."
           },
-          "verb_ter.csv" => %{
-            name: "Ter - Presente",
+          "present/verb_ter.csv" => %{
+            name: "Ter - Present",
             description: "Questions related to the verb \"ter\", which is the verb \"to have\"."
           },
-          "verb_querer.csv" => %{
-            name: "Querer - Presente",
+          "present/verb_querer.csv" => %{
+            name: "Querer - Present",
             description: "Questions related to the verb \"querer\", which is the verb \"to want\"."
           },
-          "verb_por.csv" => %{
-            name: "Por - Presente",
+          "present/verb_por.csv" => %{
+            name: "Por - Present",
             description: "Questions related to the verb \"por\", which is the verb \"to put\"."
           },
-          "verb_trazer.csv" => %{
-            name: "Trazer - Presente",
+          "present/verb_trazer.csv" => %{
+            name: "Trazer - Present",
             description: "Questions related to the verb \"trazer\", which is the verb \"to bring\"."
           },
-          "verb_poder.csv" => %{
-            name: "Poder - Presente",
+          "present/verb_poder.csv" => %{
+            name: "Poder - Present",
             description: "Questions related to the verb \"poder\", which is \"to be able to\"."
+          },
+        }
+      },
+      %{
+        name: "Verbs - Past Tense",
+        description: "Questions related to the past tense conjugation of common verbs.",
+        topics: %{
+          "past/verb_fazer.csv" => %{
+            name: "Fazer - Past",
+            description: "Questions related to the verb \"fazer\", which is the verb \"to do\"."
+          },
+          "past/verb_saber.csv" => %{
+            name: "Saber - Past",
+            description: "Questions related to the verb \"saber\", which is the verb \"to know\"."
+          },
+          "past/verb_ir.csv" => %{
+            name: "Ir - Past",
+            description: "Questions related to the verb \"ir\", which is the verb \"to go\"."
+          },
+          "past/verb_vir.csv" => %{
+            name: "Vir - Past",
+            description: "Questions related to the verb \"vir\", which is the verb \"to come\"."
+          },
+          "past/verb_ver.csv" => %{
+            name: "Ver - Past",
+            description: "Questions related to the verb \"ver\", which is the verb \"to see\"."
+          },
+          "past/verb_ter.csv" => %{
+            name: "Ter - Past",
+            description: "Questions related to the verb \"ter\", which is the verb \"to have\"."
+          },
+          "past/verb_querer.csv" => %{
+            name: "Querer - Past",
+            description: "Questions related to the verb \"querer\", which is the verb \"to want\"."
+          },
+          "past/verb_por.csv" => %{
+            name: "Por - Past",
+            description: "Questions related to the verb \"por\", which is the verb \"to put\"."
+          },
+          "past/verb_trazer.csv" => %{
+            name: "Trazer - Past",
+            description: "Questions related to the verb \"trazer\", which is the verb \"to bring\"."
+          },
+          "past/verb_poder.csv" => %{
+            name: "Poder - Past",
+            description: "Questions related to the verb \"poder\", which is \"to be able to\"."
+          },
+          "past/verb_ficar.csv" => %{
+            name: "Ficar - Past",
+            description: "Questions related to the verb \"ficar\", which is \"to stay\"."
+          },
+          "past/verb_dar.csv" => %{
+            name: "Dar - Past",
+            description: "Questions related to the verb \"dar\", which is \"to give\"."
+          },
+          "past/verb_ser.csv" => %{
+            name: "Ser - Past",
+            description: "Questions related to the verb \"ser\", which is the verb \"to be\" for permanent situations."
+          },
+          "past/verb_estar.csv" => %{
+            name: "Estar - Past",
+            description: "Questions related to the verb \"estar\", which is the verb \"to be\" for temporary situations."
+          },
+          "past/verb_dizer.csv" => %{
+            name: "Dizer - Past",
+            description: "Questions related to the verb \"dizer\", which is the verb \"to say\"."
           },
         }
       },
