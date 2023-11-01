@@ -2,20 +2,71 @@ defmodule PortuPrep.Material do
   import Ecto.Query, warn: false
   alias PortuPrep.Repo
 
+  alias PortuPrep.Material.Category
   alias PortuPrep.Material.Topic
   alias PortuPrep.Material.Question
+
+
+  @doc """
+  Returns the list of categories.
+
+  ## Examples
+
+      iex> list_categories()
+      [%Category{}, ...]
+
+  """
+  def list_categories do
+    Repo.all(Category)
+  end
+
+  @doc """
+  Gets a single category.
+
+  Raises `Ecto.NoResultsError` if the Topic does not exist.
+
+  ## Examples
+
+      iex> get_category!(123)
+      %Category{}
+
+      iex> get_category!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_category!(id), do: Repo.get!(Category, id)
+
+  @doc """
+  Creates a category.
+
+  ## Examples
+
+      iex> create_category!(%{field: value})
+      %Category{}
+
+      iex> create_category!(%{field: bad_value})
+      Raises `Ecto.Changeset` error
+
+  """
+  def create_category!(attrs \\ %{}) do
+    %Category{}
+    |> Category.changeset(attrs)
+    |> Repo.insert!()
+  end
 
   @doc """
   Returns the list of topics.
 
   ## Examples
 
-      iex> list_topics()
+      iex> list_topics_by_category()
       [%Topic{}, ...]
 
   """
-  def list_topics do
-    Repo.all(Topic)
+  def list_topics_by_category(category) do
+    category
+    |> Ecto.assoc(:topics)
+    |> Repo.all
   end
 
   # List topics ordered by name and returns a list of tuples
@@ -60,48 +111,17 @@ defmodule PortuPrep.Material do
 
   ## Examples
 
-      iex> create_topic(%{field: value})
-      {:ok, %Topic{}}
+      iex> create_topic!(%{field: value})
+      %Topic{}
 
-      iex> create_topic(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
+      iex> create_topic!(%{field: bad_value})
+      Raises `Ecto.Changeset` error
 
   """
-  def create_topic(attrs \\ %{}) do
+  def create_topic!(attrs \\ %{}) do
     %Topic{}
     |> Topic.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a topic.
-
-  ## Examples
-
-      iex> update_topic(topic, %{field: new_value})
-      {:ok, %Topic{}}
-
-      iex> update_topic(topic, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_topic(%Topic{} = topic, attrs) do
-    topic
-    |> Topic.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking topic changes.
-
-  ## Examples
-
-      iex> change_topic(topic)
-      %Ecto.Changeset{data: %Topic{}}
-
-  """
-  def change_topic(%Topic{} = topic, attrs \\ %{}) do
-    Topic.changeset(topic, attrs)
+    |> Repo.insert!()
   end
 
   @doc """

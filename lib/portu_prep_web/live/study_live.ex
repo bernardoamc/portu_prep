@@ -10,7 +10,7 @@ defmodule PortuPrepWeb.StudyLive do
     ~H"""
     <div id="questions">
       <.header>
-        <.back navigate={~p"/topics"}>Back to topics</.back>
+        <.back navigate={~p"/categories/#{@topic}"}>Back to category</.back>
 
         <.list>
           <:item title="Name"><%= @topic.name %></:item>

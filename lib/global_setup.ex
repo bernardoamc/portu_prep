@@ -1,8 +1,8 @@
 defmodule GlobalSetup do
   alias PortuPrep.Repo
-  alias PortuPrep.Material.Question
-  alias PortuPrep.Material.Topic
+  alias PortuPrep.Material
   alias PortuPrep.Material.Category
+  alias PortuPrep.Material.Topic
 
   require Logger
   require CSV
@@ -79,8 +79,8 @@ defmodule GlobalSetup do
       nil ->
         Logger.info("Creating category: #{name}")
 
-        Category.changeset(%Category{}, %{name: name, description: description, slug: slug})
-          |> Repo.insert!()
+        %{name: name, description: description, slug: slug}
+          |> Material.create_category!()
 
       category ->
         Logger.info("Category already exists: #{name}")
@@ -95,10 +95,9 @@ defmodule GlobalSetup do
       case Repo.get_by(Topic, slug: slug) do
         nil ->
           Logger.info("Creating topic: #{name}")
-          attrs = %{category_id: category.id, name: topic_attrs.name, description: topic_attrs.description, slug: slug}
 
-          Topic.changeset(%Topic{}, attrs)
-            |> Repo.insert!()
+          %{category_id: category.id, name: topic_attrs.name, description: topic_attrs.description, slug: slug}
+            |> Material.create_topic!()
             |> populate_questions_for_topic("#{fixtures_path}/#{filename}")
 
         topic ->
@@ -114,8 +113,8 @@ defmodule GlobalSetup do
     |> File.stream!()
     |> CSV.decode(separator: ?|, headers: false)
     |> Enum.each(fn {:ok, [problem, answer]} ->
-      changeset = Question.changeset(%Question{}, %{topic_id: topic.id, problem: problem, answer: answer})
-      case Repo.insert(changeset) do
+      attrs = %{topic_id: topic.id, problem: problem, answer: answer}
+      case Material.create_question(attrs) do
         {:ok, _record} ->
           Logger.info("Entry inserted: #{problem} | #{answer}")
         {:error, changeset} ->

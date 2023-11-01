@@ -1,5 +1,7 @@
+<.back navigate={~p"/categories/#{@topic.category_id}"}>Back to category</.back>
+
 <.header>
-  Listing Topics
+  Listing Topic
   <:actions>
     <.link href={~p"/study/#{@topic}"}>
       <.button>Study</.button>
@@ -11,5 +13,3 @@
   <:item title="Name"><%= @topic.name %></:item>
   <:item title="Description"><%= @topic.description %></:item>
 </.list>
-
-<.back navigate={~p"/topics"}>Back to topics</.back>

@@ -1,0 +1,22 @@
+<.back navigate={~p"/categories"}>Back to categories</.back>
+
+<.header>
+  Category
+</.header>
+
+<.list>
+  <:item title="Name"><%= @category.name %></:item>
+  <:item title="Description"><%= @category.description %></:item>
+</.list>
+
+<.header class="mt-10">
+  Topics
+</.header>
+
+<.table id="topics" rows={@topics} row_click={&JS.navigate(~p"/topics/#{&1}")}>
+  <:col :let={topic} label="Name"><%= topic.name %></:col>
+  <:col :let={topic} label="Description"><%= topic.description %></:col>
+  <:action :let={topic}>
+    <.link navigate={~p"/study/#{topic}"}>Study</.link>
+  </:action>
+</.table>

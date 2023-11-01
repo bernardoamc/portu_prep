@@ -1,0 +1,8 @@
+<.header>
+  Listing Categories
+</.header>
+
+<.table id="categories" rows={@categories} row_click={&JS.navigate(~p"/categories/#{&1}")}>
+  <:col :let={category} label="Name"><%= category.name %></:col>
+  <:col :let={category} label="Description"><%= category.description %></:col>
+</.table>
