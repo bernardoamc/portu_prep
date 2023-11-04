@@ -2,20 +2,9 @@
 
 PortuPrep is a web application that helps you learn the basics of the Portuguese language. It is built with Elixir and Phoenix.
 
+You can play with the app in [https://portuprep.com/](https://portuprep.com/)
+
 The entire application is built around two main concepts: **topics** and **questions**. A topic has many questions and a question belongs to a topic. A topic can be anything from a verb tense to a specific grammar rule. A question is a single question that the user must answer.
-
-**topics**
-
-- id
-- name
-- description
-
-**questions**
-
-- id
-- topic_id
-- problem
-- answer
 
 We also have the concept of a **submission**. A submission is a user's attempt at answering a question. A submission belongs to a question and is
 only used to keep track of the user's answer in memory. A submission is not persisted to the database.
