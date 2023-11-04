@@ -37,6 +37,7 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 - `flyctl logs --app portuprep`
 - `flyctl ssh console`
     - `bin/portu_prep remote`
+- `fly deploy`
 
 **Seeding**
 
